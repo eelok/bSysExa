@@ -8,20 +8,21 @@ elif [ "$1" -a "$2" -a "$3" == "--append" ]; then
     cat "$1" >> "$2"
     echo In file "$2" after append: 
     less -N "$2"
+    exit 0
 else 
     echo "insert first file: "
-    read firstF
-    touch "$firstF" && echo `date` > "$firstF"
+    read firstFile
+    touch "$firstFile" && echo `date` > "$firstFile"
     echo "input second file: "
-    read secodF
+    read secodFile
     echo "append: yes/no"
     read append
     if [ "$append" == "yes" ]; then
-        cat "$firstF" >> "$secodF"
-        echo In file "$secodF" after append: 
-        less -N "$secodF"
+        cat "$firstFile" >> "$secodFile"
+        echo In file "$secodFile" after append: 
+        less -N "$secodFile"
     else 
-        cat "$firstF" > "$secodF"
-        echo In file "$secodF": `cat "$secodF"`
+        cat "$firstFile" > "$secodFile"
+        echo In file "$secodFile": `cat "$secodFile"`
     fi
 fi    
