@@ -10,7 +10,7 @@ run = True
 clientUDPSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 while run:
-    message = input("Insert message to server:=>")
+    message = input("Insert your message:=>")
     clientUDPSocket.sendto(message.encode(), (ip, port))
     (data, addr) = clientUDPSocket.recvfrom(buffer)
     messageFromServer = data.decode()
