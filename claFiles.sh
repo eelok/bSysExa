@@ -20,7 +20,7 @@ else
     if [ "$append" == "yes" ]; then
         cat "$firstFile" >> "$secodFile"
         echo In file "$secodFile" after append: 
-        less -N "$secodFile"
+        cat "$secodFile"
     else 
         cat "$firstFile" > "$secodFile"
         echo In file "$secodFile": `cat "$secodFile"`
