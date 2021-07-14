@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
                 exit(1);
             }
 
-            int numOfBytes = read(fd[0], buff, bufferSize);
+            int numOfBytes = read(fd[0], buff, bufferSize);//reads from pipe
             write(fileDescriptor, buff, numOfBytes);
             close(fd[1]);
         }
